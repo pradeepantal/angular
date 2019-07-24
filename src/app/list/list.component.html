@@ -1,0 +1,13 @@
+<!-- Table goes in the document BODY -->
+<table class="gridtable">
+  <tr>
+    <th>ID</th><th>Name</th><th>Cost</th>
+  </tr>
+  <tr *ngFor="let item of product">
+    <td>{{item.id}}</td><td>{{item.name}}</td><td>{{item.cost}}</td>
+  </tr>
+
+</table>
+<p>
+  <a  [routerLink]="['/add']">Go Back to Home</a>
+</p>

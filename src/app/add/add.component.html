@@ -1,0 +1,24 @@
+<h3>Product Form</h3>
+
+<div class="container">
+  <form #userReg = "ngForm" (ngSubmit) = " onClickSubmit(userReg.value)" >
+    <label for="name">First Name</label>
+    <input ngModel type="text" id="name" name="name" placeholder="Your name.." required minlength="4" #name="ngModel">
+      <div *ngIf="name.invalid "> Please enter name</div>
+      <div *ngIf="name.errors?.minlength">
+        Name must be at least 4 characters long.
+      </div>
+
+    <label for="cost">Cost</label>
+    <input ngModel type="text" id="cost" name="cost" placeholder="cost..">
+
+    <input (click)="submit" type="submit" value="Submit">
+  </form>
+</div>
+
+<p>
+
+  <a  [routerLink]="['/list']">View Product</a>
+</p>
+{{'Hello'|reverseStr}}
+<h1 my-error>Hello {{userReg.value.name}}</h1>
